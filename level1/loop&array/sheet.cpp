@@ -44,43 +44,45 @@ int main(){
     // output
     cout<< counter;
 
-*/
+
 
     //! problem 3
     // variables
     short int numOfArr; cin>> numOfArr;
-    short int lengthArr; cin>> lengthArr;
-    vector <int> arr;
+    short int lengthArr; 
+    
 
     // logic
-    for(int i=0 ; i<numOfArr ; i++){
+    while(numOfArr--){
         cin>> lengthArr;
+        vector <int> arr(lengthArr);
+        for(int i=0 ; i<lengthArr ; i++){
+            cin>> arr[i];
+        }
+
+
+        int common;
+        if(arr[0] == arr[1] || arr[0] == arr[2]){
+            common = arr[0];
+        }
+        else if(arr[1] == arr[2]){
+            common = arr[1];
+        }
+        else{
+            common = arr[2];
+        }
+
+        
 
         for(int i=0 ; i<lengthArr ; i++){
-            cin>> i;
-            arr.push_back(i);
+            if(arr[i] != common){cout << i + 1 ; break;}
         }
+
     }
+    */
 
-//  logic
-    for(int i=0 ; i<arr.size() ; i++){
-        if( arr[i] != arr[i+1] && arr[i+2] ){
-            cout<< i+2;
-        }else{cout<< i+1;}
-    }
-
-    // test cases
-    // 4
-    // 4
-    // 11 13 11 11
-    // 5
-    // 1 4 4 4 4
-    // 10
-    // 3 3 3 3 10 3 3 3 3 3
-    // 3
-    // 20 20 10
-
-
-
+    //! problem 4
+    
+    
     return 0;
 }
